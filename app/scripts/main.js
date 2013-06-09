@@ -26,7 +26,8 @@ require.config({
         postal : 'vendor/postal',
         'ua-parser' : 'vendor/ua-parser',
         templates : '../templates',
-        data: '../data'
+        data: '../data',
+        easyfb: 'vendor/easyfacebook.jquery'
     }
 });
 

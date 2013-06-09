@@ -9,13 +9,14 @@ define(["jquery","models/collage/collage","views/pages/collage"],function($,Coll
             
             var collageData = CollageData.fromHash(id);
 
-            console.log("collageData", collageData);
-
 
 
             $(".container").html(
                 new CollagePage({ model : collageData }).render()
             );
+
+
+            $('body').trigger('collage.ready', collageData.file.url);
 		}
 	};
 });

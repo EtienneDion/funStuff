@@ -1,6 +1,6 @@
-define(["jquery","backbone","postal","controllers/editor","controllers/collage","reveal"],
+define(["jquery","backbone","postal","controllers/editor","controllers/collage","facebook/facebook","reveal"],
     
-    function($,Backbone,postal,EditorController,CollageController){
+    function($,Backbone,postal,EditorController,CollageController, Facebook){
         return {
             run : function(){
                 $(document).ready(function(){
@@ -67,11 +67,10 @@ define(["jquery","backbone","postal","controllers/editor","controllers/collage",
                         }
                     });
 
-					// register the facebook share link
-					$("a.share.facebook").on("click", function(){
-						var sharer = "https://www.facebook.com/sharer/sharer.php?u=";
-						window.open(sharer + location.href, 'sharer', 'width=626,height=436');
-					});
+
+                    Facebook.run();
+
+
                 });
             }
         };
